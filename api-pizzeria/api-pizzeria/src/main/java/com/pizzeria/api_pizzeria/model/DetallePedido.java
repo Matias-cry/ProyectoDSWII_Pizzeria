@@ -1,0 +1,48 @@
+package com.pizzeria.api_pizzeria.model;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+
+@Entity
+@Table(name = "detalle_pedidos")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class DetallePedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pedido_id", nullable = false)
+    private Pedido pedido;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "producto_id", nullable = false)
+    private Producto producto;
+
+    @Column(nullable = false)
+    private Integer cantidad;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal precioUnitario;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal subtotal;
+
+    public void setSubtotal(BigDecimal subtotal) {
+        this.subtotal = subtotal;
+    }
+    @Transient
+    public String getClienteNombre() {
+        if (this.pedido != null && this.pedido.getCliente() != null) {
+            return this.pedido.getCliente().getClienteNombre();
+        }
+        return null;
+    }
+}
