@@ -25,7 +25,6 @@ public class SwaggerConfig {
                         .license(new License()
                                 .name("Licencia Interna")
                                 .url("https://tupizzeria.com/license")))
-                // FIX: Usar una ruta relativa "/" hace que Swagger lea automáticamente la URL correcta (sea Localhost o Render)
                 .servers(List.of(
                         new Server().url("/").description("Servidor Dinámico (Local / Render)")
                 ));
