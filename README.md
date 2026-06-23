@@ -1,7 +1,5 @@
 # 🍕 Sistema de Gestión de Pedidos para Pizzería
 
-Sistema web desarrollado para la gestión de pedidos de una pizzería utilizando arquitectura cliente-servidor y servicios REST.
-
 ---
 
 ## 📋 Descripción
