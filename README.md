@@ -6,8 +6,6 @@
 
 La aplicación permite administrar clientes, empleados, productos, cupones de descuento y pedidos de una pizzería.
 
-El sistema fue desarrollado bajo una arquitectura de tres capas utilizando Spring Boot para el backend y React para el frontend.
-
 ---
 
 ## 🚀 Tecnologías utilizadas
