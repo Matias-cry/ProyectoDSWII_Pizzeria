@@ -32,6 +32,7 @@ public class AuthService {
                 .dni(empleado.getDni())
                 .nombre(empleado.getNombre())
                 .mensaje("Login exitoso")
+                .cargo(empleado.getCargo().name())
                 .build();
     }
 
@@ -60,6 +61,7 @@ public class AuthService {
                 .dni(empleadoGuardado.getDni())
                 .nombre(empleadoGuardado.getNombre())
                 .mensaje("Usuario registrado correctamente")
+                .cargo(empleadoGuardado.getCargo().name())
                 .build();
     }
 }
